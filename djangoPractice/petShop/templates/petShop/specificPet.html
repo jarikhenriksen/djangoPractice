@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+
+{% block bodyContent  %}
+
+    <h1>All About the Pets!</h1>
+
+    <h2>This is {{pet.name}}</h2>
+
+    <p> 
+        {{pet.name}} is a {{pet.species}} <br><br>
+        {{pet.name}} is {{pet.colour}}, and loves scritches
+    </p>
+    
+{% endblock  %}
