@@ -7,7 +7,7 @@ from petShop.models import Pet
 def index(request):
 
     allPets = Pet.objects.all()
-    
+
     return render(request, 'petShop/index.html', {
         'allPets': allPets
     })
@@ -20,4 +20,6 @@ def petPage(request, name):
     return render(request, 'petShop/specificPet.html', {
         'pet': specificPet
     })
+
+#TODO add form to add pets, remove pets, edit pets
 
