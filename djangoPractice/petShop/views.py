@@ -1,15 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from petShop.models import Pet
 
-
+from .forms import PetForm
 
 def index(request):
 
     allPets = Pet.objects.all()
 
     return render(request, 'petShop/index.html', {
-        'allPets': allPets
+        'allPets': allPets,
+        
     })
 
 
@@ -21,5 +22,17 @@ def petPage(request, name):
         'pet': specificPet
     })
 
-#TODO add form to add pets, remove pets, edit pets
+def addPets(request):
 
+    if request.POST :
+            form = PetForm(request.POST)
+
+            if form.is_valid():
+                HttpResponseRedirect('/')
+
+    else:
+        form = PetForm()
+
+    return render(request, 'petShop/index.html', {
+        'form': form
+    })
