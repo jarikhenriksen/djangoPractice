@@ -24,7 +24,7 @@ def petPage(request, name):
 
 def addPets(request):
 
-    if request.POST :
+    if request.method == 'POST':
             form = PetForm(request.POST)
 
             if form.is_valid():
