@@ -3,15 +3,11 @@
 {% block bodyContent %}
 
 {% for pet in allPets %}
-
-<h2>{{pet.name}}</h2>
-<p>
-    See more about 
-    <a href = "{% url 'specificPet' pet.name %}">{{pet.name}}!<a/>
-    
-
-</p>
-
+    <h2>{{pet.name}}</h2>
+        <p>
+            See more about 
+            <a href = "{% url 'specificPet' pet.name %}">{{pet.name}}!<a/>
+        </p>
 {% endfor %}
 
 <form action="" method="POST">
