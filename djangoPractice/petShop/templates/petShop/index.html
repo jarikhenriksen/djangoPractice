@@ -10,10 +10,8 @@
         </p>
 {% endfor %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form}}
-<input type="submit" value="Submit">
-</form>
+<a  href='./addPetForm.html'>
+    <input type="button" value="Add a new pet?">
+</a>
 
 {% endblock  %}
