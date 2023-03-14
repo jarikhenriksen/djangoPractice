@@ -26,12 +26,12 @@ def petPage(request, name):
 
 def addPets(request):
 
-    if request.method == 'post':
+    if request.method == 'POST':
             print('1')
             form = PetForm(request.POST)
             if form.is_valid():
                 print('2')
-                HttpResponseRedirect('petShop/index.html')
+                HttpResponseRedirect('petShop/addPetSuccess.html')
     else:
         print('3')
         form = PetForm()
